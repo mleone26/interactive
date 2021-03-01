@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>middle tide</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Karma:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+   <style>
+      body {
+        background-image: url(../underwater.jpg);
+        background-size: cover;
+        font-family: 'Karma', serif;
+        font-size: 40px;
+        margin: 40px;
+      }
+      .column {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row
+        margin: 20px 20px 0;
+        padding: 20px;
+        border: none;
+      }
+/*      .column:last-child {
+        padding-bottom: 60px;
+      }
+      .column::after {
+        content: '';
+        clear: both;
+        display: block;
+      }*/
+/*      .column div {
+        position: relative;
+        float: right;
+        width: 500px;
+        height: 312px;
+        margin: 0 0 0 25px;
+        padding: 0;
+      }
+      .column div:first-child {
+        margin-left: 0;
+      }*/
+      .column div span {
+        position: absolute;
+        bottom: -20px;
+        left: 0;
+        z-index: -1;
+        display: block;
+        width: 300px;
+        margin: 0;
+        padding: 0;
+        color: black;
+        font-size: 30px;
+        text-align: center;
+        transition: .8s ease-in-out;
+        opacity: 0;
+      }
+      figure {
+        width: 500px;
+        height: 312px;
+        display: flex;
+        margin: 0;
+        padding: 0;
+        background: #fff;
+        overflow: hidden;
+      }
+      figure:hover+span {
+        bottom: -36px;
+        opacity: 1;
+      }
+      .hover07 figure img {
+        filter: blur(8px);
+        transition: .8s ease-in-out;
+      }
+      .hover07 figure:hover img {
+        filter: blur(0);
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2 id="demo07">middle tide</h2>
+    <div class="hover07 column">
+      <div>
+        <figure><img src="images/bent-nosed_clam.jpg"/> </figure>
+        <span>bent-nosed clam</span>
+      </div>
+      <div>
+        <figure><img src="images/brooding_anemone.jpg"/> </figure>
+        <span>brooding anemone</span>
+      </div>
+      <div>
+        <figure><img src="images/encrusting_bryozoa.jpg"/> </figure>
+        <span>encrusting bryozoa</span>
+      </div>
+      <div>
+        <figure><img src="images/finger_limpet.jpg"/> </figure>
+        <span>finger limpet</span>
+      </div>
+      <div>
+        <figure><img src="images/littleneck_clam.jpg"/> </figure>
+        <span>littleneck clam</span>
+      </div>
+      <div>
+        <figure><img src="images/pink-tipped_green_anemone.jpg"/> </figure>
+        <span>pink-tipped green anemone</span>
+      </div>
+      <div>
+        <figure><img src="images/plate_limpet.jpg"/> </figure>
+        <span>plate limpet</span>
+      </div>
+      <div>
+        <figure><img src="images/scale_worm.jpg"/> </figure>
+        <span>scale worm</span>
+      </div>  
+      <div>
+        <figure><img src="images/sea_lichen.jpg"/> </figure>
+        <span>sea lichen</span>
+      </div> 
+      <div>
+        <figure><img src="images/snail_worms.jpg"/> </figure>
+        <span>snail worms</span>
+      </div> 
+    </div>
+  </body>
+</html>   
