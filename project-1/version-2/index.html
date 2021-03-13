@@ -21,82 +21,72 @@
       line-height: 8px;
       left: 20px;
       position:absolute;
-      color: rgb(183, 242, 119);
+    }
+
+    .middletide {
+      color: rgb(129,255,247);
+    }
+
+    .midtext {
+      color: rgb(129,255,247);
     }
 
     .lowtide {
+      color: rgb(51,202,214);
       top:730px;
       position:relative;
     }
 
+    .lowtext {
+      color: rgb(51,202,214);
+    }
+
     .subtide {
+      color: rgb(0,131,143);
       top:1500px;
       position:relative;
+    }
+
+    .subtext {
+      color: rgb(0,131,143);
     }
 
     .images {
       position: absolute;
     }
 
-    .midimg1 {top: 130px; left: 60px;} 
-
+    .midimg1 {top: 130px; left: 60px;}  
     .midimg2 {top: 240px; left: 290px;}
-
     .midimg3 {top: 70px; left: 500px;}
-
     .midimg4 {top: 450px; left: 100px;}
-
     .midimg5 {top: 300px; left: 600px;}
-
     .midimg6 {top: 120px; left: 850px;}
-
     .midimg7 {top: 325px; left: 1100px;}
-
     .midimg8 {top: 550px; left: 420px;}
-
     .midimg9 {top: 500px; left: 800px;}
-
     .midimg10 {top: 570px; left: 1170px;}
 
     .lowimg1 {top: 880px; left: 110px;}
-
     .lowimg2 {top: 1025px; left: 325px;}
-
     .lowimg3 {top: 800px; left: 600px;}
-
     .lowimg4 {top: 1220px; left: 75px;}
-
     .lowimg5 {top: 1350px; left: 400px;}
-
     .lowimg6 {top: 1000px; left: 950px;}
-
     .lowimg7 {top: 1200px; left: 1170px;}
-
     .lowimg8 {top: 1080px; left: 650px;}
-
     .lowimg9 {top: 1290px; left: 800px;}
-
     .lowimg10 {top: 770px;left: 1000px;}
 
-    .subimg1 {top: 1880px; left: 110px;}
-
-    .subimg2 {top: 2025px; left: 325px;}
-
-    .subimg3 {top: 1800px; left: 600px;}
-
-    .subimg4 {top: 2220px; left: 75px;}
-
-    .subimg5 {top: 2350px; left: 400px;}
-
-    .subimg6 {top: 2000px; left: 950px;}
-
-    .subimg7 {top: 2200px; left: 1170px;}
-
-    .subimg8 {top: 2080px; left: 650px;}
-
-    .subimg9 {top: 2290px; left: 800px;}
-
-    .subimg10 {top: 1770px;left: 1000px;}
+    .subimg1 {top: 1640px; left: 60px;}
+    .subimg2 {top: 1820px; left: 300px;}
+    .subimg3 {top: 1570px; left: 520px;}
+    .subimg4 {top: 2000px; left: 100px;}
+    .subimg5 {top: 2050px; left: 460px;}
+    .subimg6 {top: 1610px; left: 950px;}
+    .subimg7 {top: 1960px; left: 800px;}
+    .subimg8 {top: 1770px; left: 630px;}
+    .subimg9 {top: 2100px; left: 1060px;}
+    .subimg10 {top: 1840px;left: 1140px;}
 
     img {
       height: 125px;
@@ -105,8 +95,11 @@
       transition: 1s ease-in-out;
       position: relative;
       z-index: 0;
-/*      transform-origin: center;*/
     }
+
+    .midtext1 + img {transform-origin: right;}
+
+    img > .midtext1 {transform-origin: right;}
 
     img:hover {
       transform: scale(2.8);
@@ -120,7 +113,6 @@
       position:relative;
       font-size: 70px;
       line-height: 0px;
-      color: rgb(129,255,247);
       right:20px;
     }
 
@@ -163,7 +155,13 @@
   .subimg9:hover + .subtext9 {visibility:visible;}
   .subimg10:hover + .subtext10 {visibility:visible;}
 
-
+  h3 {
+    top: 2300px;
+    left: 20px;
+    font-size: 30px;
+    line-height: 20px;
+    position: relative;
+  }
 
     </style>
 
@@ -173,77 +171,77 @@
 
     <!--     Middle tide -->
 
-    <div id="middletide">
+    <div class="middletide">
       <h1>middle tide</h1>
     </div>
 
     <div class="images midimg1">
 	  <img  src="middle-tide-images/bent-nosed_clam.jpg">
     </div>
-    <div class="midtext1">
+    <div class="midtext midtext1">
       <h2>bent-nosed clam</h2>
     </div>
 
     <div class="images midimg2">
       <img src="middle-tide-images/brooding_anemone.jpg">
     </div>
-    <div class="midtext2">
+    <div class="midtext midtext2">
       <h2>brooding anemone</h2>
     </div>
 
     <div class="images midimg3">
       <img src="middle-tide-images/encrusting_bryozoa.jpg">
     </div>
-    <div class="midtext3">
+    <div class="midtext midtext3">
       <h2>encrusting bryozoa</h2>
     </div>
 
     <div class="images midimg4">
       <img src="middle-tide-images/finger_limpet.jpg">
     </div>
-    <div class="midtext4">
+    <div class="midtext midtext4">
       <h2>finger limpet</h2>
     </div>
 
     <div class="images midimg5">
       <img src="middle-tide-images/littleneck_clam.jpg">
     </div>
-    <div class="midtext5">
+    <div class="midtext midtext5">
       <h2>littleneck clam</h2>
     </div>
 
     <div class="images midimg6">
       <img src="middle-tide-images/pink-tipped_green_anemone.jpg">
     </div>
-    <div class="midtext6">
+    <div class="midtext midtext6">
       <h2>pink-tipped green anemone</h2>
     </div>
 
     <div class="images midimg7">
       <img src="middle-tide-images/plate_limpet.jpg">
     </div>
-    <div class="midtext7">
+    <div class="midtext midtext7">
       <h2>plate limpet</h2>
     </div>
 
     <div class="images midimg8">
       <img src="middle-tide-images/scale_worm.jpg">
     </div>
-    <div class="midtext8">
+    <div class="midtext midtext8">
       <h2>scale worm</h2>
     </div>
 
     <div class="images midimg9">
       <img src="middle-tide-images/sea_lichen.jpg">
     </div>
-    <div class="midtext9">
+    <div class="midtext midtext9">
       <h2>sea lichen</h2>
     </div>
 
     <div class="images midimg10">
       <img src="middle-tide-images/snail_worms.jpg">
     </div>
-    <div class="midtext10">
+    <div class="midtext midtext10">
       <h2>snail worms</h2>
     </div>
 
@@ -256,70 +254,70 @@
     <div class="images lowimg1">
       <img src="low-tide-images/beaded_anemone.jpg">
     </div>
-    <div class="lowtext1">
+    <div class="lowtext lowtext1">
       <h2>beaded anemone</h2>
     </div>
 
     <div class="images lowimg2">
       <img src="low-tide-images/blood_star.jpg">
     </div>
-    <div class="lowtext2">
+    <div class="lowtext lowtext2">
       <h2>blood star</h2>
     </div>
 
     <div class="images lowimg3">
       <img src="low-tide-images/blue_top_shell.jpg">
     </div>
-    <div class="lowtext3">
+    <div class="lowtext lowtext3">
       <h2>blue top shell</h2>
     </div>
 
     <div class="images lowimg4">
       <img src="low-tide-images/calcareous_tube_worm.jpg">
     </div>
-    <div class="lowtext4">
+    <div class="lowtext lowtext4">
       <h2>calcareous tube worm</h2>
     </div>
 
     <div class="images lowimg5">
       <img src="low-tide-images/christmas_anemone.jpg">
     </div>
-    <div class="lowtext5">
+    <div class="lowtext lowtext5">
       <h2>christmas anemone</h2>
     </div>
 
     <div class="images lowimg6">
       <img src="low-tide-images/cup_coral.jpg">
     </div>
-    <div class="lowtext6">
+    <div class="lowtext lowtext6">
       <h2>cup coral</h2>
     </div>
 
     <div class="images lowimg7">
       <img src="low-tide-images/green_anemone.jpg">
     </div>
-    <div class="lowtext7">
+    <div class="lowtext lowtext7">
       <h2>green anemone</h2>
     </div>
 
     <div class="images lowimg8">
       <img src="low-tide-images/green_sea_urchin.jpg">
     </div>
-    <div class="lowtext8">
+    <div class="lowtext lowtext8">
       <h2>green sea urchin</h2>
     </div>
 
     <div class="images lowimg9">
       <img src="low-tide-images/sea_whip.jpg">
     </div>
-    <div class="lowtext9">
+    <div class="lowtext lowtext9">
       <h2>sea whip</h2>
     </div>
 
     <div class="images lowimg10">
       <img src="low-tide-images/zoanthids.jpg">
     </div>
-    <div class="lowtext10">
+    <div class="lowtext lowtext10">
       <h2>zoanthids</h2>
     </div>
 
@@ -332,71 +330,75 @@
     <div class="images subimg1">
       <img src="sub-tide-images/basket_star.jpg">
     </div>
-    <div class="subtext1">
+    <div class="subtext subtext1">
       <h2>basket star</h2>
     </div>
 
     <div class="images subimg2">
       <img src="sub-tide-images/boring_sponge.jpg">
     </div>
-    <div class="subtext2">
+    <div class="subtext subtext2">
       <h2>boring sponge</h2>
     </div>
 
     <div class="images subimg3">
       <img src="sub-tide-images/cloud_sponge.jpg">
     </div>
-    <div class="subtext3">
+    <div class="subtext subtext3">
       <h2>cloud sponge</h2>
     </div>
 
     <div class="images subimg4">
       <img src="sub-tide-images/compound_ascidian.jpg">
     </div>
-    <div class="subtext4">
+    <div class="subtext subtext4">
       <h2>compound ascidian</h2>
     </div>
 
     <div class="images subimg5">
       <img src="sub-tide-images/orange-striped_jellyfish.jpg">
     </div>
-    <div class="subtext5">
+    <div class="subtext subtext5">
       <h2>orange-striped jellyfish</h2>
     </div>
 
     <div class="images subimg6">
       <img src="sub-tide-images/ostrich_plume_hydroid.jpg">
     </div>
-    <div class="subtext6">
+    <div class="subtext subtext6">
       <h2>ostrich plume hydroid</h2>
     </div>
 
     <div class="images subimg7">
       <img src="sub-tide-images/sea_blubber_jellyfish.jpg">
     </div>
-    <div class="subtext7">
+    <div class="subtext subtext7">
       <h2>sea blubber jellyfish</h2>
     </div>
 
     <div class="images subimg8">
       <img src="sub-tide-images/staghorn_bryozoa.jpg">
     </div>
-    <div class="subtext8">
+    <div class="subtext subtext8">
       <h2>staghorn bryozoa</h2>
     </div>
 
     <div class="images subimg9">
       <img src="sub-tide-images/swimming_anemone.jpg">
     </div>
-    <div class="subtext9">
+    <div class="subtext subtext9">
       <h2>swimming anemone</h2>
     </div>
 
     <div class="images subimg10">
       <img src="sub-tide-images/tube_anemone.jpg">
     </div>
-    <div class="subtext10">
+    <div class="subtext subtext10">
       <h2>tube anemone</h2>
+    </div>
+
+    <div>
+      <h3>These images were found in </h3>
     </div>
 
   </body>
