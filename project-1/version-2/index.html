@@ -4,30 +4,30 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>low tide</title>
+    <title>Version 2</title>
     <link rel="icon" type="image/png" href="images/icon.png"/>
     <link rel="preconnect" href="https://fonts.gstatic.com"> 
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600&display=swap" rel="stylesheet">
 
     <style>
 
-    * {
-      background-color: rgb(210, 210, 210);
-      font-family: 'Space Grotesk', sans-serif;
+    body{      
+    	background-color: rgb(210, 210, 210);
+    	font-family: 'Space Grotesk', sans-serif;
     }
 
-    .text {
-      font-size: 50px;
-      color: rgb(129,255,247);
-      line-height: 0px;
-      position: sticky;
-      top: 0;
-      left: 10px;
-      z-index: 9999;
-      background: transparent;
-/*      position:absolute;*/
+    h1 {
+      font-size: 70px;
+      line-height: 8px;
+      left: 20px;
+      position:absolute;
+      color: rgb(183, 242, 119);
     }
 
+    .lowtide {
+      top:725px;
+      position:relative;
+    }
 
     .images {
       position: absolute;
@@ -45,33 +45,33 @@
 
     .midimg6 {top: 120px; left: 850px;}
 
-    .midimg7 {top: 350px; left: 1100px;}
+    .midimg7 {top: 325px; left: 1100px;}
 
     .midimg8 {top: 550px; left: 420px;}
 
     .midimg9 {top: 500px; left: 800px;}
 
-    .midimg10 {top: 560px; left: 1170px;}
+    .midimg10 {top: 570px; left: 1170px;}
 
-    .lowimg1 {top: 900px; left: 60px;}
+    .lowimg1 {top: 850px; left: 120px;}
 
-    .lowimg2 {top: 1010px; left: 290px;}
+    .lowimg2 {top: 1010px; left: 310px;}
 
-    .lowimg3 {top: 840px; left: 900px;}
+    .lowimg3 {top: 800px; left: 600px;}
 
-    .lowimg4 {top: 1220px; left: 100px;}
+    .lowimg4 {top: 1220px; left: 75px;}
 
-    .lowimg5 {top: 1370px; left: 600px;}
+    .lowimg5 {top: 1350px; left: 400px;}
 
-    .lowimg6 {top: 1070px; left: 850px;}
+    .lowimg6 {top: 1000px; left: 950px;}
 
-    .lowimg7 {top: 1120px; left: 1100px;}
+    .lowimg7 {top: 1200px; left: 1170px;}
 
-    .lowimg8 {top: 1120px; left: 420px;}
+    .lowimg8 {top: 1080px; left: 650px;}
 
-    .lowimg9 {top: 1270px; left: 800px;}
+    .lowimg9 {top: 1290px; left: 800px;}
 
-    .lowimg10 {top: 1330px;left: 1170px;}
+    .lowimg10 {top: 770px;left: 1000px;}
 
     img {
       height: 125px;
@@ -96,14 +96,18 @@
       font-size: 70px;
       line-height: 0px;
       color: rgb(129,255,247);
+      right:20px;
     }
 
   .lowtext1, .lowtext2, .lowtext3, .lowtext4, .lowtext5, .lowtext6, .lowtext7, .lowtext8, .lowtext9, .lowtext10, .midtext1, .midtext2, .midtext3, .midtext4, .midtext5, .midtext6, .midtext7, .midtext8, .midtext9, .midtext10{
     visibility:hidden;
-    position:absolute;
-    top:0px;
+    position:fixed;
     right:0px;
+    top:0px;
+    z-index: 9999;
   }
+
+
 
 	.lowimg1:hover + .lowtext1 {visibility:visible;}
   .lowimg2:hover + .lowtext2 {visibility:visible;}
@@ -136,7 +140,7 @@
 
     <!--     Middle tide -->
 
-    <div class="text lowtide">
+    <div id="middletide">
       <h1>middle tide</h1>
     </div>
 
@@ -212,9 +216,9 @@
 
     <!--     Low tide -->
 
-<!--     <div class="text lowtide">
+    <div class="lowtide">
       <h1>low tide</h1>
-    </div> -->
+    </div>
 
     <div class="images lowimg1">
       <img src="low-tide-images/beaded_anemone.jpg">
@@ -287,6 +291,80 @@
     </div>
 
     <!--     Sub tide -->
+
+    <div class="subtide">
+      <h1>sub tide</h1>
+    </div>
+
+    <div class="images subimg1">
+      <img src="sub-tide-images/beaded_anemone.jpg">
+    </div>
+    <div class="subtext1">
+      <h2>beaded anemone</h2>
+    </div>
+
+    <div class="images subimg2">
+      <img src="sub-tide-images/blood_star.jpg">
+    </div>
+    <div class="subtext2">
+      <h2>blood star</h2>
+    </div>
+
+    <div class="images subimg3">
+      <img src="sub-tide-images/blue_top_shell.jpg">
+    </div>
+    <div class="subtext3">
+      <h2>blue top shell</h2>
+    </div>
+
+    <div class="images subimg4">
+      <img src="sub-tide-images/calcareous_tube_worm.jpg">
+    </div>
+    <div class="subtext4">
+      <h2>calcareous tube worm</h2>
+    </div>
+
+    <div class="images subimg5">
+      <img src="sub-tide-images/christmas_anemone.jpg">
+    </div>
+    <div class="subtext5">
+      <h2>christmas anemone</h2>
+    </div>
+
+    <div class="images subimg6">
+      <img src="sub-tide-images/cup_coral.jpg">
+    </div>
+    <div class="subtext6">
+      <h2>cup coral</h2>
+    </div>
+
+    <div class="images subimg7">
+      <img src="sub-tide-images/green_anemone.jpg">
+    </div>
+    <div class="subtext7">
+      <h2>green anemone</h2>
+    </div>
+
+    <div class="images subimg8">
+      <img src="sub-tide-images/green_sea_urchin.jpg">
+    </div>
+    <div class="subtext8">
+      <h2>green sea urchin</h2>
+    </div>
+
+    <div class="images subimg9">
+      <img src="sub-tide-images/sea_whip.jpg">
+    </div>
+    <div class="subtext9">
+      <h2>sea whip</h2>
+    </div>
+
+    <div class="images subimg10">
+      <img src="sub-tide-images/zoanthids.jpg">
+    </div>
+    <div class="subtext10">
+      <h2>zoanthids</h2>
+    </div>
 
   </body>
 </html>
