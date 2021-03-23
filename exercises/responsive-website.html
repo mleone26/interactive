@@ -3,145 +3,107 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Responsive calendar</title>
+    <title>Responsive website</title>
 	  <link rel="preconnect" href="https://fonts.gstatic.com"> 
 	  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap" rel="stylesheet">
 
     <style>
 
-		* {
-		  background-color: rgb(212, 212, 212);
-		  font-family: 'Space Grotesk', sans-serif;
-		}
+    * {
+      background-color: rgb(212, 212, 212);
+    }
 
-		.container {
-		  border: 1.3px dashed black;
-		  width: 90%;
-		  height: 700px;
-		  margin: auto;
-		  margin-top: 30px;
-		  display: flex;
-		  flex-direction: row;
-		  flex-wrap: nowrap;
-		}
+    .container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
 
-		.sidebar {
-		  width: 75%;
-		  display: flex;
-		  flex-direction: column;
-		  flex-wrap: nowrap;
-		}
+    .column {
+      flex: 19%;
+      max-width: 25%;
+      padding: 4px;
+    }
 
-		.image-wrapper {
-		  width: 25%;
-		  position: relative;
-		  overflow: hidden;
-		}
+    .column img {
+      margin: 20px;
+      vertical-align: center;
+      width: 70%;
+      display: block;
+      margin-left:auto;
+      margin-right:auto;
+    }
 
-		.image-wrapper, .sidebar {
-		  margin: 1em;
-		}
+    @media screen and (max-width: 1200px) {
+      .column {
+        flex: 24%;
+        max-width: 25%;
+      }
 
-		.title {
-		  margin: .5em;
-		  margin-top: 0;
-		  font-size: 40px;
-		  text-align: center;
-		}
+      * {background-color: rgb(190, 190, 190);}
+    }
 
-		h1 {
-		  margin: 6px;
-		}
+    @media screen and (max-width: 950px) {
+      .column {
+        flex: 32%;
+        max-width: 25%;
+      }
 
-		.calendar {
-		  height: 100%;
-		  display: grid;
-		  grid-template-columns: repeat(7, 1fr);
-		  grid-template-rows: 2.1em auto;
-		}
-		.weekday, .day {
-		  border: .5px solid black;
-		  font-size: 20px;
-		  text-align: right;
-		  padding-top: 4px;
-		  padding-right: 8px;
-		}
+      * {background-color: rgb(170, 170, 170);}
+    }
+
+    @media screen and (max-width: 768px) {
+      .column {
+        flex: 40%;
+        max-width: 50%;
+      }
+      
+      * {background-color: rgb(150, 150, 150);}
+    }
+
+    @media screen and (max-width: 520px) {
+      .column {
+        flex: 100%;
+        max-width: 100%;
+      }
+
+      * {background-color: rgb(100, 100, 100);}
+    }
 
     </style>
 
   </head>
 
   <body>
-
-    <div class="container">
-
-      <div class="image-wrapper">
-        <img src="assets/galaxy-1.jpg">
+    <div class="container"> 
+      <div class="column">
+        <img src="assets/plant-1.jpg">
+        <img src="assets/plant-2.jpg"> 
+        <img src="assets/plant-3.jpg">
       </div>
-
-      <div class="sidebar">
-
-        <div class="title">
-          <h1>April 2021</h1>
-        </div>
-
-        <div class="calendar">
-          <div class="weekday">Sun</div>
-          <div class="weekday">Mon</div>
-          <div class="weekday">Tue</div>
-          <div class="weekday">Wed</div>
-          <div class="weekday">Thu</div>
-          <div class="weekday">Fri</div>
-          <div class="weekday">Sat</div>
-          <!--         First week   -->
-          <div class="day"></div>
-          <div class="day"></div>
-          <div class="day"></div>
-          <div class="day"></div>
-          <div class="day">1</div>
-          <div class="day">2</div>
-          <div class="day">3</div>
-          <!--       Second week     -->
-          <div class="day">4</div>
-          <div class="day">5</div>
-          <div class="day">6</div>
-          <div class="day">7</div>
-          <div class="day">8</div>
-          <div class="day">9</div>
-          <div class="day">10</div>
-          <!--       Third week     -->
-          <div class="day">11</div>
-          <div class="day">12</div>
-          <div class="day">13</div>
-          <div class="day">14</div>
-          <div class="day">15</div>
-          <div class="day">16</div>
-          <div class="day">17</div>
-          <!--       fourth week     -->
-          <div class="day">18</div>
-          <div class="day">19</div>
-          <div class="day">20</div>
-          <div class="day">21</div>
-          <div class="day">22</div>
-          <div class="day">23</div>
-          <div class="day">24</div>
-          <!--       fifth week     -->
-          <div class="day">25</div>
-          <div class="day">26</div>
-          <div class="day">27</div>
-          <div class="day">28</div>
-          <div class="day">29</div>
-          <div class="day">30</div>
-          <div class="day"></div>
-        </div>
-
+      <div class="column">
+        <img src="assets/plant-4.jpg">
+        <img src="assets/plant-5.jpg"> 
+        <img src="assets/plant-6.jpg">
+      </div> 
+      <div class="column">
+        <img src="assets/plant-7.jpg">
+        <img src="assets/plant-8.jpg"> 
+        <img src="assets/plant-9.jpg">
       </div>
-
-      <div class="image-wrapper">
-        <img src="assets/galaxy-2.jpg">
+      <div class="column">
+        <img src="assets/plant-10.jpg">
+        <img src="assets/plant-11.jpg"> 
+        <img src="assets/plant-12.jpg">
       </div>
-
+      <div class="column">
+        <img src="assets/plant-13.jpg">
+        <img src="assets/plant-14.jpg"> 
+        <img src="assets/plant-15.jpg">
+      </div>
     </div>
   </body>
+
 </html>
 
