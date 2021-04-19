@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>test</title>
+    <title>test1</title>
 	  <link rel="preconnect" href="https://fonts.gstatic.com"> 
 	  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap" rel="stylesheet">
 
@@ -11,17 +11,24 @@
 
     * {
     color: black !important;
-    mix-blend-mode: screen;
+/*    mix-blend-mode: screen;*/
+
     }
 
- #overlay {
+/*    html {filter:grayscale(100%)}*/
+html {filter: grayscale(100%) sepia(100%) hue-rotate(120deg);}
+
+/*    img {filter:grayscale(100%)}*/
+
+/* #overlay {
     position:fixed;
     z-index: 100;
     top:0; 
     left:0;
     bottom:0; 
     right:0;
-    background-color:rgba(120,200,30,0.5);}
+    background-color:rgba(120,200,30,0.5);
+  pointer-events:none;}*/
 
 
     .container {
@@ -55,35 +62,23 @@
         max-width: 25%;
       }
 
-/*      * {background-color: rgb(190, 190, 190);}
-    }*/
-
     @media screen and (max-width: 950px) {
       .column {
         flex: 32%;
         max-width: 25%;
       }
 
-/*      * {background-color: rgb(170, 170, 170);}
-    }*/
-
     @media screen and (max-width: 768px) {
       .column {
         flex: 40%;
         max-width: 50%;
-      }
-      
-/*      * {background-color: rgb(150, 150, 150);}
-    }*/
+      }  
 
     @media screen and (max-width: 590px) {
       .column {
         flex: 100%;
         max-width: 100%;
       }
-
-/*      * {background-color: rgb(100, 100, 100);}
-    }*/
 
     </style>
 
@@ -94,7 +89,7 @@
       <div class="column">
         <h1>text color testing</h1>
         <img src="assets/plant-2.jpg"> 
-        <img src="assets/plant-3.jpg">
+        <img src="assets/test.jpg">
       </div>
       <div class="column">
         <img src="assets/plant-4.jpg">
