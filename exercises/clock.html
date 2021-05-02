@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Clock</title>
+    <style>
+
+      body {
+        background: linear-gradient(-90deg, #ff1131, #541cff, #8100ff, #00e4ff, #0041ff, #f400ff);
+        background-size: 1000% 1000%;
+        animation-name: flow; 
+        animation-duration: 120s;
+        animation-timing-function: ease; 
+        animation-iteration-count: infinite;
+      }
+
+      @keyframes flow {
+        0% {
+          background-position: 0% 0%;
+        }
+        50% {
+          background-position: 100% 0%;
+        }
+        100% {
+          background-position: 0% 0%;
+        }
+      }
+
+      }
+    </style>
+  </head>
+
+  <body>
+    <div></div>
+  </body>
+
+</html>
