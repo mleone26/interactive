@@ -25,7 +25,7 @@
       margin-left: 8px;
     }
 
-    .button {
+/*    .button {
       border: none;
       padding: 7px 14px;
       text-align: center;
@@ -38,12 +38,23 @@
       border-radius: 12px;
     }
 
-    #button1 {background-color: #f6f6f6; color: #5e5e5e;}
-    #button2 {background-color: #fefef0; color: #65625d;}
-    #button3 {background-color: #f4fff3; color: #61645d;}
-    #button4 {background-color: #f3ffff; color: #5c6463;}
-    #button5 {background-color: #fff9ff; color: #666066;}
-    #button6 {background-color: #fffbf7; color: #746c6c;}
+    #greyscale {background-color: #f6f6f6; color: #5e5e5e;}
+    #yellow {background-color: #fefef0; color: #65625d;}
+    #green {background-color: #f4fff3; color: #61645d;}
+    #blue {background-color: #f3ffff; color: #5c6463;}
+    #purple {background-color: #fff9ff; color: #666066;}
+    #pink {background-color: #fffbf7; color: #746c6c;}*/
+
+    #color {
+      font-family: 'Montserrat', sans-serif;
+      top: 40px;
+      padding: 2px;
+      margin-left: 8px;
+    }
+
+    #save {
+      font-family: 'Montserrat', sans-serif;
+    }
 
     </style>
   </head>
@@ -58,12 +69,24 @@
 
       <br>
 
-      <button class="button" id= "button1" type="button" onclick="">Greyscale</button>
-      <button class="button" id= "button2" type="button" onclick="">Yellow</button>
-      <button class="button" id= "button3" type="button" onclick="">Green</button>
-      <button class="button" id= "button4" type="button" onclick="">Blue</button>
-      <button class="button" id= "button5" type="button" onclick="">Purple</button>
-      <button class="button" id= "button6" type="button" onclick="">Pink</button>
+      <select id="color">
+         <option value="greyscale">Greyscale</option>
+         <option value="yellow">Yellow</option>
+         <option value="green">Green</option>
+         <option value="blue">Blue</option>
+         <option value="purple">Purple</option>
+         <option value="pink">Pink</option>
+      </select>
+      <button id="save">Save</button>
+
+      <br>
+
+<!--       <button class="button" id= "greyscale" type="button" onclick="">Greyscale</button>
+      <button class="button" id= "yellow" type="button" onclick="">Yellow</button>
+      <button class="button" id= "green" type="button" onclick="">Green</button>
+      <button class="button" id= "blue" type="button" onclick="">Blue</button>
+      <button class="button" id= "purple" type="button" onclick="">Purple</button>
+      <button class="button" id= "pink" type="button" onclick="">Pink</button> -->
 
       <br>
 

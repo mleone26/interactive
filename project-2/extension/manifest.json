@@ -5,7 +5,7 @@
   "description": "Reduce visual clutter with Monotone!",
   "content_scripts": [{ 
     "matches": ["http://*/*", "https://*/*"],
-    "js": ["popup.js"],
+    "js": ["update.js"],
     "css": ["styles.css"]
   }],
   "permissions": [

@@ -1,39 +1,348 @@
-
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Clock</title>
+    <title>Lunar clock</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;600&display=swap"
+      rel="stylesheet"
+    />
     <style>
-
       body {
-        background: linear-gradient(-90deg, #ff1131, #541cff, #8100ff, #00e4ff, #0041ff, #f400ff);
-        background-size: 1000% 1000%;
-        animation-name: flow; 
-        animation-duration: 120s;
-        animation-timing-function: ease; 
-        animation-iteration-count: infinite;
+        background: black;
+        margin: 0px;
       }
 
-      @keyframes flow {
-        0% {
-          background-position: 0% 0%;
-        }
-        50% {
-          background-position: 100% 0%;
-        }
-        100% {
-          background-position: 0% 0%;
-        }
+      .wrapper {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: center;
       }
 
+      #circle {
+        background: #f2fbff;
+        border-radius: 50%;
+        position: fixed;
+        transform: translate(0px, 50%);
+      }
+
+      #line1 {
+        background: #f2fbff;
+        width: 1500px;
+        height: 1px;
+        bottom: 699px;
+        position: fixed;
+      }
+
+      #perigeetext {
+        font-family: Space Grotesk;
+        color: #f2fbff;
+        bottom: 674px;
+        left: 10px;
+        position: fixed;
+      }
+
+      #line2 {
+        background: #f2fbff;
+        width: 1500px;
+        height: 1px;
+        bottom: 359px;
+        position: fixed;
+      }
+
+      #apogeetext {
+        font-family: Space Grotesk;
+        color: #f2fbff;
+        bottom: 334px;
+        left: 10px;
+        position: fixed;
       }
     </style>
   </head>
 
   <body>
-    <div></div>
-  </body>
+    <div class="wrapper">
+      <div id="circle"></div>
+    </div>
 
+    <div id="line1"></div>
+    <div id="perigeetext">Perigee (moon is closest to earth)</div>
+    <div id="line2"></div>
+    <div id="apogeetext">Apogee (moon is furthest from earth)</div>
+
+    <script>
+      // Apogee 0: Apr 14 1:45 pm
+      // Perigee 0: Apr 27  11:22 am
+      // Apogee 1: May 11 5:53 pm
+      // Perigee 1: May 25 9:50 pm
+      // Apogee 2: Jun 7 10:27 pm
+      // Perigee 2: Jun 23 5:54 am
+      // Apogee 3: Jul 5 10:46 am
+      // Perigee 3: Jul 21 6:23 am
+      // Apogee 4: Aug 2 3:35 am
+      // Perigee 4: Aug 17 5:15 am
+      // Apogee 5: Aug 29 10:22 pm
+      // Perigee 5: Sep 11  6:03 am
+      // Apogee 6: Sep 26 5:43 pm
+      // Perigee 6: Oct 8 1:27 pm
+      // Apogee 7: Oct 24 11:28 am
+      // Perigee 7: Nov 5 6:17 pm
+      // Apogee 8: Nov 20 9:12 pm
+      // Perigee 8: Dec 4 5:03 am
+      // Apogee 9: Dec 17 9:14 pm
+      
+      // X_normalized = (b - a) * [ (x - y) / (z - y) ] + a
+      // The formula for normalizing a value x that comes from a range (y, z) between a range (a, b):
+
+      var today = new Date();
+      // for testing, you could use these dates instead of the current date- they're close to apogee and close to perigee.
+      // var today = new Date("2021-04-27T11:20");
+      // var today = new Date("2021-05-11T17:50");
+
+      var apogee0 = new Date("2021-04-14T13:45");
+      var perigee0 = new Date("2021-04-27T11:22");
+      var apogee1 = new Date("2021-05-11T17:53");
+      var perigee1 = new Date("2021-05-25T21:50");
+      var apogee2 = new Date("2021-06-07T22:27");
+      var perigee2 = new Date("2021-06-23T05:54");
+      var apogee3 = new Date("2021-07-05T10:46");
+      var perigee3 = new Date("2021-07-21T06:23");
+      var apogee4 = new Date("2021-08-02T03:35");
+      var perigee4 = new Date("2021-08-17T05:15");
+      var apogee5 = new Date("2021-08-29T22:22");
+      var perigee5 = new Date("2021-09-11T06:03");
+      var apogee6 = new Date("2021-09-26T17:43");
+      var perigee6 = new Date("2021-10-08T13:27");
+      var apogee7 = new Date("2021-10-24T11:28");
+      var perigee7 = new Date("2021-11-05T18:17");
+      var apogee8 = new Date("2021-11-20T21:12");
+      var perigee8 = new Date("2021-12-04T05:03");
+      var apogee9 = new Date("2021-12-17T21:14");
+
+      var minwidth = 720;
+      var maxwidth = 1400;
+
+      if (today > apogee0 && today < apogee1) {
+        if (today < perigee0) {
+          var difference =
+            (maxwidth - minwidth) *
+              [
+                (today.getTime() - apogee0.getTime()) /
+                  (perigee0.getTime() - apogee0.getTime())
+              ] +
+            minwidth;
+          document.getElementById("circle").style.width = difference + "px";
+          document.getElementById("circle").style.height = difference + "px";
+        } else {
+          var difference =
+            (minwidth - maxwidth) *
+              [
+                (today.getTime() - perigee0.getTime()) /
+                  (apogee1.getTime() - perigee0.getTime())
+              ] +
+            maxwidth;
+          document.getElementById("circle").style.width = difference + "px";
+          document.getElementById("circle").style.height = difference + "px";
+        }
+      }
+      
+      if (today > apogee1 && today < apogee2) {
+        if (today < perigee1) {
+          var difference =
+            (maxwidth - minwidth) *
+              [
+                (today.getTime() - apogee1.getTime()) /
+                  (perigee1.getTime() - apogee1.getTime())
+              ] +
+            minwidth;
+          document.getElementById("circle").style.width = difference + "px";
+          document.getElementById("circle").style.height = difference + "px";
+        } else {
+          var difference =
+            (minwidth - maxwidth) *
+              [
+                (today.getTime() - perigee1.getTime()) /
+                  (apogee2.getTime() - perigee1.getTime())
+              ] +
+            maxwidth;
+          document.getElementById("circle").style.width = difference + "px";
+          document.getElementById("circle").style.height = difference + "px";
+        }
+      }
+      
+      if (today > apogee2 && today < apogee3) {
+        if (today < perigee2) {
+          var difference =
+            (maxwidth - minwidth) *
+              [
+                (today.getTime() - apogee2.getTime()) /
+                  (perigee2.getTime() - apogee2.getTime())
+              ] +
+            minwidth;
+          document.getElementById("circle").style.width = difference + "px";
+          document.getElementById("circle").style.height = difference + "px";
+        } else {
+          var difference =
+            (minwidth - maxwidth) *
+              [
+                (today.getTime() - perigee2.getTime()) /
+                  (apogee3.getTime() - perigee2.getTime())
+              ] +
+            maxwidth;
+          document.getElementById("circle").style.width = difference + "px";
+          document.getElementById("circle").style.height = difference + "px";
+        }
+      }
+      
+      if (today > apogee3 && today < apogee4) {
+        if (today < perigee3) {
+          var difference =
+            (maxwidth - minwidth) *
+              [
+                (today.getTime() - apogee3.getTime()) /
+                  (perigee3.getTime() - apogee3.getTime())
+              ] +
+            minwidth;
+          document.getElementById("circle").style.width = difference + "px";
+          document.getElementById("circle").style.height = difference + "px";
+        } else {
+          var difference =
+            (minwidth - maxwidth) *
+              [
+                (today.getTime() - perigee3.getTime()) /
+                  (apogee4.getTime() - perigee3.getTime())
+              ] +
+            maxwidth;
+          document.getElementById("circle").style.width = difference + "px";
+          document.getElementById("circle").style.height = difference + "px";
+        }
+      }
+      
+      if (today > apogee4 && today < apogee5) {
+        if (today < perigee4) {
+          var difference =
+            (maxwidth - minwidth) *
+              [
+                (today.getTime() - apogee4.getTime()) /
+                  (perigee4.getTime() - apogee4.getTime())
+              ] +
+            minwidth;
+          document.getElementById("circle").style.width = difference + "px";
+          document.getElementById("circle").style.height = difference + "px";
+        } else {
+          var difference =
+            (minwidth - maxwidth) *
+              [
+                (today.getTime() - perigee4.getTime()) /
+                  (apogee5.getTime() - perigee4.getTime())
+              ] +
+            maxwidth;
+          document.getElementById("circle").style.width = difference + "px";
+          document.getElementById("circle").style.height = difference + "px";
+        }
+      }
+      
+      if (today > apogee5 && today < apogee6) {
+        if (today < perigee5) {
+          var difference =
+            (maxwidth - minwidth) *
+              [
+                (today.getTime() - apogee5.getTime()) /
+                  (perigee5.getTime() - apogee5.getTime())
+              ] +
+            minwidth;
+          document.getElementById("circle").style.width = difference + "px";
+          document.getElementById("circle").style.height = difference + "px";
+        } else {
+          var difference =
+            (minwidth - maxwidth) *
+              [
+                (today.getTime() - perigee5.getTime()) /
+                  (apogee6.getTime() - perigee5.getTime())
+              ] +
+            maxwidth;
+          document.getElementById("circle").style.width = difference + "px";
+          document.getElementById("circle").style.height = difference + "px";
+        }
+      }
+      
+      if (today > apogee6 && today < apogee7) {
+        if (today < perigee6) {
+          var difference =
+            (maxwidth - minwidth) *
+              [
+                (today.getTime() - apogee6.getTime()) /
+                  (perigee6.getTime() - apogee6.getTime())
+              ] +
+            minwidth;
+          document.getElementById("circle").style.width = difference + "px";
+          document.getElementById("circle").style.height = difference + "px";
+        } else {
+          var difference =
+            (minwidth - maxwidth) *
+              [
+                (today.getTime() - perigee6.getTime()) /
+                  (apogee7.getTime() - perigee6.getTime())
+              ] +
+            maxwidth;
+          document.getElementById("circle").style.width = difference + "px";
+          document.getElementById("circle").style.height = difference + "px";
+        }
+      }
+      
+      if (today > apogee7 && today < apogee8) {
+        if (today < perigee7) {
+          var difference =
+            (maxwidth - minwidth) *
+              [
+                (today.getTime() - apogee7.getTime()) /
+                  (perigee7.getTime() - apogee7.getTime())
+              ] +
+            minwidth;
+          document.getElementById("circle").style.width = difference + "px";
+          document.getElementById("circle").style.height = difference + "px";
+        } else {
+          var difference =
+            (minwidth - maxwidth) *
+              [
+                (today.getTime() - perigee7.getTime()) /
+                  (apogee8.getTime() - perigee7.getTime())
+              ] +
+            maxwidth;
+          document.getElementById("circle").style.width = difference + "px";
+          document.getElementById("circle").style.height = difference + "px";
+        }
+      }
+      
+      if (today > apogee8 && today < apogee9) {
+        if (today < perigee8) {
+          var difference =
+            (maxwidth - minwidth) *
+              [
+                (today.getTime() - apogee8.getTime()) /
+                  (perigee8.getTime() - apogee8.getTime())
+              ] +
+            minwidth;
+          document.getElementById("circle").style.width = difference + "px";
+          document.getElementById("circle").style.height = difference + "px";
+        } else {
+          var difference =
+            (minwidth - maxwidth) *
+              [
+                (today.getTime() - perigee8.getTime()) /
+                  (apogee9.getTime() - perigee8.getTime())
+              ] +
+            maxwidth;
+          document.getElementById("circle").style.width = difference + "px";
+          document.getElementById("circle").style.height = difference + "px";
+        }
+      }
+
+    </script>
+  </body>
 </html>
+
