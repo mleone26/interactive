@@ -8,99 +8,114 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com"> 
 	<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;600&display=swap" rel="stylesheet">
   </head>
-  <body style="font-family:Space Grotesk; background-image:linear-gradient(90deg,rgba(255,230,205,1)0%,rgba(255,224,224,1)100%); margin: 70px 70px 70px 90px">
+  <body>
   	
     <style>
 		
     body {
       font-family:Space Grotesk; 
       background-image:linear-gradient(90deg,rgba(255,230,205,1)0%,rgba(255,224,224,1)100%); 
-      margin: 70px 70px 70px 90px;
+      margin: 80px;
+    }
+
+    .row {
+      display: flex;
+      top: 0px;
+    }
+
+    .column {
+      flex: 50%;
     }
 
     h1 {
-      font-size:75px; 
-      line-height: 40px; 
-      color:rgb(255, 168, 148);
+      font-size:100px; 
+      line-height: 75px; 
+      color:#ffa894;
     }
 
     h2 {
-      font-size:50px; 
-      line-height: 20px; 
-      color:rgb(255, 180, 82);
+      font-size:65px; 
+      line-height: 50px; 
+      margin-top: -15px;
+      color:#ffa894;  
     }
 
     ul {
-      font-size:24px; 
-      color:rgb(255, 180, 82);
+      font-size:35px; 
+      margin-top: -20px;
+      color:#ebc336; 
     }
 
-    /* unvisited link */
 		a:link {
-		  color: rgb(136, 163, 131);
+      color: #8a9e8c;
 		}
-		/* visited link */
+
 		a:visited {
-		  color: rgb(136, 163, 131);
+		  color: #8a9e8c;
 		}
-		/* mouse over link */
+
 		a:hover {
-		  color: rgb(178, 207, 209);
-		  text-transform: none;
+		  color: #ebc336;
 		}
 
 	</style>
 
     <h1>Melissa's class website</h1>
 
-    <h2>Class projects</h2>
+    <div class="row">
 
-    <ul>
-      <li>
-        <a href="project-1/version-1/index.html">Tour (Version 1)</a>
-      </li>
-      <li>
-        <a href="project-1/version-2/index.html">Tour (Version 2)</a>
-      </li>
-      <li>
-        <a href="project-2/index.html">Extension</a>
-      </li>
-      <li>
-        <a href="https://madlib-protocol.glitch.me">Protocol</a>
-      </li>
-      <li>
-        <a href="project-3/clock.html">Clock</a>
-      </li>
-    </ul>
+      <div class="column">
+        <h2>Class projects</h2>
+        <ul>
+          <li>
+            <a href="project-1/version-1/index.html">Tour (Version 1)</a>
+          </li>
+          <li>
+            <a href="project-1/version-2/index.html">Tour (Version 2)</a>
+          </li>
+          <li>
+            <a href="project-2/index.html">Extension</a>
+          </li>
+          <li>
+            <a href="https://madlib-protocol.glitch.me">Protocol</a>
+          </li>
+          <li>
+            <a href="project-3/clock.html">Clock</a>
+          </li>
+        </ul>
+      </div>
 
-    <h2>Exercises</h2>
+      <div class="column">
+        <h2>Exercises</h2>
+    	  <ul>
+          <li>
+            <a href="exercises/top-10.html">Top 10</a>
+          </li>
+          <li>
+            <a href="https://sophisticated-fearless-walker.glitch.me">Are.na site</a>
+          </li>
+          <li>
+            <a href="exercises/website-as.html">Website as...</a>
+          </li>
+          <li>
+            <a href="exercises/calendar.html">April calendar</a>
+          </li>
+          <li>
+            <a href="exercises/responsive-website.html">Responsive website</a>
+          </li>
+          <li>
+            <a href="exercises/reading-response.html">Reading response</a>
+          </li>
+          <li>
+            <a href="exercises/ambient-webpage.html">Ambient webpage</a>
+          </li>
+          <li>
+            <a href="exercises/window.html">Window</a>
+          </li>
+        </ul>
+      </div>
 
-	  <ul>
-      <li>
-        <a href="exercises/top-10.html">Top 10</a>
-      </li>
-      <li>
-        <a href="https://sophisticated-fearless-walker.glitch.me">Are.na site</a>
-      </li>
-      <li>
-        <a href="exercises/website-as.html">Website as...</a>
-      </li>
-      <li>
-        <a href="exercises/calendar.html">April calendar</a>
-      </li>
-      <li>
-        <a href="exercises/responsive-website.html">Responsive website</a>
-      </li>
-      <li>
-        <a href="exercises/reading-response.html">Reading response</a>
-      </li>
-      <li>
-        <a href="exercises/ambient-webpage.html">Ambient webpage</a>
-      </li>
-      <li>
-        <a href="exercises/window.html">Window</a>
-      </li>
-    </ul>
+    </div>
 
   </body>
 </html>
