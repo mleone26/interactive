@@ -14,5 +14,11 @@ document.getElementById("save").onclick = function() {
    chrome.storage.local.set({"color":color}, function(){
     console.log("saved to storage favorite color " + color);
   });
+
+var timestamp = new Date();
+
+   chrome.storage.local.set({"timestamp":timestamp}, function(){
+    console.log("saved to storage timestamp" + timestamp);
+  });
 }
 

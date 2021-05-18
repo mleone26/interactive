@@ -12,6 +12,7 @@ chrome.storage.local.onChanged.addListener(function() {
   	var html = document.querySelectorAll("html")[0];
   	console.log(html);
   	console.log(data["color"]);
+  	html.classList.remove("greyscale", "yellow", "green", "blue", "purple", "pink");
   	html.classList.add(data["color"]);
   });
 });
